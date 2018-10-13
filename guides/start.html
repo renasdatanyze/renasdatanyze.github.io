@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Web Development start guide</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="assets/icomoon/style.css">
+	<link rel="stylesheet" href="assets/animate.css/animate.css">
+	<style>
+	.img-parag img {
+		border: 1px solid rgba(0,0,0,0.15);
+		border-radius: 5px;
+	}
+	.img-parag a {
+		position: relative;
+		display: block;
+	}
+	.img-parag a:hover .img-wrapper {
+		opacity: 0.85;	
+	}
+	.img-wrapper {
+		transition: all 0.4s;
+		display: flex;
+		position: absolute;
+		opacity: 0;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		align-items: center;
+		justify-content: center;
+		background-color: rgba(0,0,0,0.65);
+		color: white;
+	}
+	.img-wrapper span {
+		display: block;
+	}
+	code {
+		border: 1px solid;
+		padding: 4px;
+		border-radius: 4px;
+		background-color: rgba(0,0,0,0.05);
+	}
+	.scrollButton {
+		display: none;
+		position: fixed;
+		bottom: 2rem;
+		right: 2rem;
+		height: 4rem;
+		width: 4rem;
+		font-size: 4rem;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		transition: all 150ms;
+		border-radius: 4px;
+		border: 1px solid rgba(0,0,255,0.3);
+		background-color: rgba(0,0,255,0.2);
+		color: blue; 
+		text-decoration: none;
+	}
+	.scrollButton:hover {
+		text-decoration: none;
+	}
+	.scrollButton.active {
+		display: flex; 
+	}
+	.scrollButton.active:hover {
+		background-color: rgba(0,0,255,0.4);
+		color: rgba(0,0,255,0.7); 
+	}
+	.scrollButton.animated {
+		animation-duration: 195ms; 
+	}
+</style>
+</head>
+<body>
+	<div class="container px-lg-5">
+		<section class="header row my-3">
+			<div class="col-lg-10">
+				<h1>Web Development Guide</h1>
+				<p>Добро пожаловать на курсы по веб разработки. Мы ценим Ваш интерес и время, поэтому был составлен краткий гайд по настройке программ для дальнейшего обучения.</p>
+				<ol>
+					<li><a href="#sublime-install">Шаг первый: установить Sublime Text</a></li>
+					<li><a href="#sublime-setup">Шаг второй: настроить Sublime Text</a></li>
+					<li><a href="#graph">Шаг третий: установить графический редактор</a></li>
+					<li><a href="#git-install">Шаг четвертый: установить систему контроля версий (git). А так-же что это такое, и как его освоить.</a></li>
+					<li><a href="#git-setup">Шаг пятый: настроить систему контроля версий.</a></li>
+					<li><a href="#start">Шаг шестой: начало работы.</a></li>
+					<li><a href="#git-short">Команды git для повседневной работы, кратко.</a></li>
+					<li><a href="#extra">Полезные ссылки.</a></li>
+				</ol>
+			</div>
+		</section>
+		<section id="sublime-install" class=" row my-3">
+			<div class="col-lg-10">
+				<h3>Шаг первый: установить Sublime Text</h3>
+				<p>Текстовый редактор Sublime Text - это одновременно мощный и очень простой инструмент для написания кода.</p>
+				<p>Если у Вас Windows или OS X, то скачать его можно <a target="_blank" href="https://www.sublimetext.com/3">здесь.</a></p>
+				<p>Надеюсь, что у Вас не возникнет трудностей при установке на Windows или OS X, если же будут проблемы активации программы, то можете скачать и установить текстовый редактор <a target="_blank" href="https://atom.io/">Atom</a>.</p>
+				<p>Если у Вас Ubuntu или другая версия Linux то переходите по этой <a target="_blank" href="https://www.sublimetext.com/docs/3/linux_repositories.html">ссылке. Далее подробнее о том как установить этот редактор на Ubuntu.</a></p>
+				<p>Перейдя по ссылке необходимо нажать на <b>"apt"</b>, как показано на картинке ниже.</p>
+				<p class="img-parag"><a target="_blank" href="assets/01.jpg"><img src="assets/01.jpg" class="img-fluid" alt="01.jpg"></a></p>
+				<p>Далее открываем терминал на компьютере с помощью комбинации клавиш <b>"ctrl + alt + T"</b>. Потом копируем с сайта первую строчку (очередность показана на картинке ниже) и вставляем его в терминал и нажимаем <b>"Enter"</b>. Вставить в терминале можно нажав на <b>"ctrl + shift + V"</b> либо с помощью правой кнопки мыши и выбрав в контекстном меню <b>"Вставить"</b>. Далее терминал может запросить пароль, напишите тот пароль, который Вы используете для входа в систему. Набираем его внимательно, потому что при вводе ничего не отображается, даже звездочки. Набрав нажимаем <b>"Enter"</b> и команда начнет выполнятся. После того как команда выполнится (Вы это поймете когда в терминале выйдет зеленая строка с именем пользователя), проделываем ту же операцию с остальными строками по порядку, всего их пять.</p>
+				<p>Последняя строка является командой для установки программы, и после его ввода терминал может попросить подтверждения <b>"Y/n"</b> или <b>"Д/н"</b>. В зависимости от языка системы набираем <b>"y"</b> или <b>"д"</b> и нажимаем <b>"Enter"</b></p>
+				<p class="img-parag"><a target="_blank" href="assets/02.jpg"><img src="assets/02.jpg" class="img-fluid" alt="02.jpg"></a></p>
+				<p>Поздравляю! Вы сами установили Sublime Text! Далее, необходимо сделать базовые настройки.</p>
+				<p class="text-right"><a href="#">Перейти к меню</a></p>
+			</div>
+		</section>
+		<section id="sublime-setup" class="row my-3">
+			<div class="col-lg-10">
+				<h3>Шаг второй: настроить Sublime Text</h3>
+				<p>Запускаем Sublime Text, его можно найти в списке программ, либо набрав в терминале команду <b>"subl"</b></p>
+				<p>Первым делом, чтобы заработали плагины, нужно установить <b>Package Contol</b>. Для этого нажимаем <b>"Ctrl + Shift + P"</b>. Затем начинаем вводить команду <b>"Install Package Control"</b>, по мере ввода она выйдет ниже, нажимаем на него как показано на рисунке ниже.</p>
+				<p class="img-parag"><a target="_blank" href="assets/03.jpg"><img src="assets/03.jpg" class="img-fluid" alt="03.jpg"></a></p>
+				<p>После его установки так же нажамаем <b>"Ctrl + Shift + P"</b> и вводим <b>"Install Package"</b> и выбираем как показано на рисунке ниже.</p>
+				<p class="img-parag"><a target="_blank" href="assets/04.jpg"><img src="assets/04.jpg" class="img-fluid" alt="04.jpg"></a></p>
+				<p>Далее можно установить плагины. Для начала Вам необходимо поставить <b>Emmet</b> (ускоряет написание HTML и CSS кода до скорости света. <a target="_blank" href="https://www.youtube.com/watch?v=RfFtACtO998">Урок по Emmet</a>) и <b>AutoFileName</b> (дополняет код при написании путей до файлов в вёрстке). Просто вводим их названия, они сами выйдут и жмем для установки.</p>
+				<p>Ура! Вы сделали базовую настройку Sublime Text! В будущем, по мере надобности можете установить много других полезных плагинов и оформлений для этой программы.</p>
+			</div>
+		</section>
+		<section id="graph" class="row my-3">
+			<div class="col-lg-10">
+				<h3>Шаг третий: установить графический редактор</h3>
+				<p>Как правило, верстка сайта происходит по готовому шаблону от веб-дизайнера. Эти шаблоны в большинстве случаев лежат в файлах формата <b>.psd</b>. И чтобы их открывать, нужны соответствующие программы. Для Windows и Mac, отлично подойдет Adobe Photoshop, но она платная, а использование пиратских версий не прибавит плюсиков к вашей карме=). Можно воспользоваться <a target="_blank" href="https://lifehacker.ru/open-psd-without-photoshop/">аналогами</a>. А для Ubuntu мы используем <a target="_blank" href="http://ubuntuhandbook.org/index.php/2018/03/krita-4-0-released-install-ubuntu-18-0417-10/">Krita 4.0</a>, которую так же, как и Sublime Text, установим через терминал. Нужно выполнить три шага, как на картинке ниже, подробно расписывать не буду, так принцип установки истолкован выше.</p>
+				<p class="img-parag"><a target="_blank" href="assets/05.jpg"><img src="assets/05.jpg" class="img-fluid" alt="05.jpg"></a></p>
+				<p>Отлично! Теперь нужно настроить систему контроля версий.</p>
+			</div>
+		</section>
+		<section id="git-install" class="row my-3">
+			<div class="col-lg-10">
+				<h3>Шаг четвертый: установить систему контроля версий (git). А так-же что это такое, и как его освоить.</h3>
+				<p>Что такое контроль версий, и зачем он вам нужен? Система контроля версий (СКВ) — это система, регистрирующая изменения в одном или нескольких файлах с тем, чтобы в дальнейшем была возможность вернуться к определённым старым версиям этих файлов.</p>
+				<p>Если вы хотели бы хранить каждую версию кода сайта — а этого вам наверняка хочется — то пользоваться системой контроля версий будет очень мудрым решением. СКВ даёт возможность возвращать отдельные файлы к прежнему виду, возвращать к прежнему состоянию весь проект, просматривать происходящие со временем изменения, определять, кто последним вносил изменения во внезапно переставший работать модуль, кто и когда внёс в код какую-то ошибку, и многое другое. Вообще, если, пользуясь СКВ, вы всё испортите или потеряете файлы, всё можно будет легко восстановить. Вдобавок, накладные расходы за всё, что вы получаете, будут очень маленькими.</p>
+				<p>Всеми этими продвинутыми функциями Вы будете пользоваться в будущем когда возьметесь за более сложные и крутые проекты, но никто не запрещает ими пользоваться уже сейчас, и чтобы все их успешно освоить, рекомендую пройти обучение по этим источникам:
+					<ul>
+						<li><a target="_blank" href="https://learngitbranching.js.org/">Интерактивная игра.</a></li>
+						<li><a target="_blank" href="https://www.youtube.com/watch?v=en6gms6e54Q&list=PLIU76b8Cjem5B3sufBJ_KFTpKkMEvaTQR">Видео уроки.</a></li>
+						<li><a target="_blank" href="http://try.github.io/">Документация и другие полезные ссылки.</a></li>
+					</ul>
+					</p>
+						<p>Для нашего же обучения будет вполне достаточно использовать git в качестве облачного хранилища для нашего кода и средства просмотра результата для проверки Вашего прогресса.</p>
+						<p>Первым делом, git нужно установить на компьютер. <a target="_blank" href="https://git-scm.com/">Ссылка для скачивания</a>. У кого Ubuntu, переходим <a target="_blank" href="https://git-scm.com/download/linux">сюда</a>, либо просто прописываем одну единственную команду в терминале:</p>
+						<p><code>sudo apt-get install git</code></p>
+						<p>Отлично! Git установлен!</p>
+					</div>
+				</section>
+				<section id="git-setup" class="row my-3">
+					<div class="col-lg-10">
+						<h3>Шаг пятый: настроить систему контроля версий.</h3>
+						<p>Переходим на <a target="_blank" href="https://github.com/">github.com</a> и регистрирумся там.</p>
+						<p class="img-parag"><a target="_blank" href="assets/06.jpg"><img src="assets/06.jpg" class="img-fluid" alt="06.jpg"></a></p>
+						<p>Далее создаем аккаунт</p>
+						<p class="img-parag"><a target="_blank" href="assets/07.jpg"><img src="assets/07.jpg" class="img-fluid" alt="07.jpg"></a></p>
+						<p>Выбираем бесплатный план, отличие от платного лишь в том, что там нельзя создавать приватные репозитории.</p>
+						<p class="img-parag"><a target="_blank" href="assets/08.jpg"><img src="assets/08.jpg" class="img-fluid" alt="08.jpg"></a></p>
+						<p>Можно заполнить небольшой опрос, или пропустить этот шаг</p>
+						<p class="img-parag"><a target="_blank" href="assets/09.jpg"><img src="assets/09.jpg" class="img-fluid" alt="09.jpg"></a></p>
+						<p>После всего этого нужно подтвердить свой аккаунт перейдя по ссылке в письме которое придет на Вашу почту</p>
+						<p>Далее, если у Вас Ubuntu, открываем терминал и пишем команду:</p>
+						<p><code>mk dir webdev</code> - этим Вы создаете папку <b>"webdev"</b> в домашней папке Ubuntu</p>
+						<p><code>cd webdev</code> - переходим в эту папку</p>
+
+						<p>Чтобы сделать то же самое на windows, нужно просто создать папку <b>"webdev"</b>, например на рабочем столе или в документах, и так же заходим в нее. Открываем правой кнопкой мыши контекстное меню и жмем на <b>"Git Bash Here"</b>. Откроется аналог терминала как на Ubuntu.</p>
+						<p class="img-parag"><a target="_blank" href="assets/10.jpg"><img src="assets/10.jpg" class="img-fluid" alt="10.jpg"></a></p>
+						<p>Далее инструкции будут едиными для Ubuntu и Windows. Нужно произвести глобальные настройки, пишем в терминале:</p>
+						<p><code>git config --global user.name "renasdatanyze"</code> - где, <b>renasdatanyze</b> это имя пользователя на github</p>
+						<p><code>git config --global user.email "renasdatanyze@gmail.com"</code> - <b>renasdatanyze@gmail.com</b> это почтовый ящик который зарегистрирован на github</p>
+						<p>Переходим дальше обратно на <a target="_blank" href="https://github.com/">github.com</a>. Открываем Ваши репозитории:</p>
+						<p class="img-parag"><a target="_blank" href="assets/11.jpg"><img src="assets/11.jpg" class="img-fluid" alt="11.jpg"></a></p>
+						<p>Создаем новый:</p>
+						<p class="img-parag"><a target="_blank" href="assets/12.jpg"><img src="assets/12.jpg" class="img-fluid" alt="12.jpg"></a></p>
+						<p>Пишем название <b>"[Имя пользователя].github.io"</b>, например мой репозиторий будет называться <b>"renasdatanyze.github.io"</b></p>
+						<p class="img-parag"><a target="_blank" href="assets/13.jpg"><img src="assets/13.jpg" class="img-fluid" alt="13.jpg"></a></p>
+						<p>Далее github предложит несколько способов связать репозиторий с компьютером, проще всего сделать клонирование, для этого нажмем на кнопку как показано на рисунке, в буфер обмена скопируется url репозитория:</p>
+						<p class="img-parag"><a target="_blank" href="assets/14.jpg"><img src="assets/14.jpg" class="img-fluid" alt="14.jpg"></a></p>
+						<p>В терминале пишем <code>git clone https://github.com/renasdatanyze/renasdatanyze.github.io.git</code> - где <b>"https://github.com/renasdatanyze/renasdatanyze.github.io.git"</b> - это скопированный url репозитория</p>
+						<p>Теперь в папке будет создана новая папка с название репозитория, заходим туда <code>cd renasdatanyze.github.io</code> - <b>"renasdatanyze.github.io"</b> - созданная папка</p>
+						<p>Все, теперь за этой папкой закрепился git - репозиторий. То же самое клонирование нужно проделать на другом компьютере (например на домашнем), чтобы так же связать его с удаленным репозиторием. Т. е. открыть папку и написать в терминале <code>git clone https://github.com/renasdatanyze/renasdatanyze.github.io.git</code></p>
+					</div>
+				</section>
+				<section id="start" class="row my-3">
+					<div class="col-lg-10">
+						<h3>Шаг шестой: начало работы.</h3>
+						<p>Отлично, Вы создали репозиторий и связали его с компьютерами, теперь начнем работать</p>
+						<p>Откройте <b>Sublime Text</b>, создайте и сохраните файл <b>"test.html"</b>. Для этого нажмите <b>File > New File</b>, потом <b>File > Save As</b>, пропишите название <b>"test.html"</b> и сохраните его в папке Вашего репозитория.</p>
+						<p>В самом файле напишите: <code>html:5</code> и нажмите <b>"Tab"</b>. Если у Вас установлен плагин Emmet, то надпись превратится в это:</p>
+						<p class="img-parag"><a target="_blank" href="assets/15.jpg"><img src="assets/15.jpg" class="img-fluid" alt="15.jpg"></a></p>
+						<p>Сделайте заголовок первого уровня с надписью <b>"Hello World!"</b></p>
+						<p class="img-parag"><a target="_blank" href="assets/16.jpg"><img src="assets/16.jpg" class="img-fluid" alt="16.jpg"></a></p>
+						<p>Давайте откроем терминал в папке репозитория. Прощего всего это сделать так, зайти в эту папку через файловый менеджер или проводник, вызвать контекстное меню правой кнопкой мыши и выбрать <b>"Открыть в терминале"</b>, а если у Вас Windows, то <b>"Git Bash Here"</b>. Либо же изначально открыть терминал и перейти в папку от туда с помощью команды <b>"mkdir"</b>.</p>
+						<p>В терминале наберем: <code>git status</code> и увидим следущее:</p>
+						<p class="img-parag"><a target="_blank" href="assets/17.jpg"><img src="assets/17.jpg" class="img-fluid" alt="17.jpg"></a></p>
+						<p>Это означает что мы создали новый файл <b>"test.html"</b>, но git его не отслеживает. Чтобы git его отслеживал и мог включить в коммит, нужно его добавить:</p>
+						<p><code>git add test.html</code></p>
+						<p>либо:</p>
+						<p><code>git add *</code></p>
+						<p>В первом случае у нас добавится только наш файл, а во втором все файлы которые были созданы или обновлены в папке. Рекомендую пользоваться втором способом, это намного быстрее.</p>
+						<p>Снова проверим <code>git status</code></p>
+						<p class="img-parag"><a target="_blank" href="assets/18.jpg"><img src="assets/18.jpg" class="img-fluid" alt="18.jpg"></a></p>
+						<p>Убеждаемся что все файлы отслеживаются. Теперь можно сделать коммит:</p>
+						<p><code>git commit -m "my first commit"</code> - в кавычках обязательно нужно прописать комментарий к коммиту. И проверим статус.</p>
+						<p class="img-parag"><a target="_blank" href="assets/19.jpg"><img src="assets/19.jpg" class="img-fluid" alt="19.jpg"></a></p>
+						<p>Всё получилось? Отлично! Но это еще не всё. Мы создали коммит, т.е. новую версию репозитория, но все эти изменения доступны только на текущем компьютере. Чтобы потом можно было продолжить работу с другого компьютера, необходимо передать все эти изменения на github. Это можно сделать с помощью следующей команды:</p>
+						<p><code>git push</code></p>
+						<p>После ввода терминал поочередно спросит имя пользователя и пароль от Вашего github аккаунта. Вводим их, не забываем что при вводе пароля символы не отображаются, если ввели что-то неправильно, повторите команду еще раз.</p>
+						<p class="img-parag"><a target="_blank" href="assets/20.jpg"><img src="assets/20.jpg" class="img-fluid" alt="20.jpg"></a></p>
+						<p>Push сделан, теперь проверим репозиторий на github</p>
+						<p class="img-parag"><a target="_blank" href="assets/21.jpg"><img src="assets/21.jpg" class="img-fluid" alt="21.jpg"></a></p>
+						<p>Супер! Теперь репозиторий доступен на github! Откроем там файл <b>"test.html"</b> и скопируем его публичный адрес нажав на кнопку как на рисунке ниже:</p>
+						<p class="img-parag"><a target="_blank" href="assets/22.jpg"><img src="assets/22.jpg" class="img-fluid" alt="22.jpg"></a></p>
+						<p>В новой вкладке вставим адрес и перейдем на него:</p>
+						<p class="img-parag"><a target="_blank" href="assets/23.jpg"><img src="assets/23.jpg" class="img-fluid" alt="23.jpg"></a></p>
+						<p>Как видим у нас открылась созданная нами страница, и что самое главное, эту страницу может посмотреть любой человек который получил эту ссылку. Это очень удобно, можно показывать готовые или промежуточные результаты работы над сайтом, видеть результаты домашних работ, да и этот гайд доступен благодаря этой фиче. Её мы с вами будем активно пользоваться при обучении.</p>
+						<p>Осталось освоить еще одну задачу. Например Вы сделали работу, закоммитили и сделали пуш репозитория, пришли домой и захотели продолжить работу. Но на этом компьютере Вам недоступна актуальная версия. Значит нужно актуализировать данные. Заходим в локальную папку репозитория (Вы его клонировали, помните?) и запускаем терминал, пишем:</p>
+						<p><code>git pull</code></p>
+						<p class="img-parag"><a target="_blank" href="assets/24.jpg"><img src="assets/24.jpg" class="img-fluid" alt="24.jpg"></a></p>
+						<p>Теперь у вас на компьютере свежая версия! После того как сделаете работу, снова выполните <b>"add, commit, push"</b>, чтобы потом с такой же легкостью продолжить работу на другом месте или дать мне возможность проверить Вашу домашнюю работу.</p>
+					</div>
+				</section>
+				<section id="git-short" class="row my-3">
+					<div class="col-lg-10">
+						<h3>Команды git для повседневной работы, кратко.</h3>
+						<p>Открываем терминал в папке репозитория.</p>
+						<p><code>git status</code> - узнать статус локального репозитория</p>
+						<p>Работа завершена, нужно обновить реппозиторий:</p>
+						<p><code>git add *</code> - добавить все изменненные и новые файлы.</p>
+						<p><code>git commit -m "your comment"</code> - сделать локальный коммит репозитория.</p>
+						<p><code>git push</code> - обновить удаленный репозиторий на github. Необходимо ввести имя пользователя и пароль от github.</p>
+						<p>Перед началом работы на другом компьютере:</p>
+						<p><code>git pull</code> - обновить локальный репозиторий.</p>
+					</div>			
+				</section>
+				<section id="extra" class="row my-3">
+					<div class="col-lg-10">
+						<h3>Полезные ссылки.</h3>
+					<ul>
+						<li><a target="_blank" href="https://learngitbranching.js.org/">Интерактивная игра.</a></li>
+						<li><a target="_blank" href="https://www.youtube.com/watch?v=en6gms6e54Q&list=PLIU76b8Cjem5B3sufBJ_KFTpKkMEvaTQR">Видео уроки.</a></li>
+						<li><a target="_blank" href="http://try.github.io/">Документация и другие полезные ссылки.</a></li>
+					</ul>
+					</div>			
+				</section>
+			</div>
+			<a href="#" class="scrollButton td-none"><i class="angle icm icm-angle-up"></i></a>
+
+
+
+
+
+
+			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+			<script src="assets/jquery/jquery-3.3.1.min.js"></script>
+			<script>
+				$.fn.extend({
+					animateCss: function(animationName, callback) {
+						var animationEnd = (function(el) {
+							var animations = {
+								animation: 'animationend',
+								OAnimation: 'oAnimationEnd',
+								MozAnimation: 'mozAnimationEnd',
+								WebkitAnimation: 'webkitAnimationEnd'
+							};
+
+							for (var t in animations) {
+								if (el.style[t] !== undefined) {
+									return animations[t];
+								}
+							}
+						})(document.createElement('div'));
+
+						this.addClass('animated ' + animationName).one(animationEnd, function() {
+							$(this).removeClass('animated ' + animationName);
+
+							if (typeof callback === 'function') callback();
+						});
+
+						return this;
+					}
+				});
+				class Anchor {
+					constructor(selector, duration) {
+						this.selector = selector;
+						this.$btn = $(selector);
+						this.duration = duration;
+					}
+					activate() {
+						this.btnEvents(this.duration);
+					}
+					btnEvents(duration) {
+						this.$btn.click(function () {
+							var sc = $(this).attr("href");
+							var dn = 0;
+							if (sc != '#') dn = $(sc).offset().top;
+                // * sc - в переменную заносим информацию о том, к какому блоку надо перейти
+                // * dn - определяем положение блока на странице
+
+                $('html, body').animate({scrollTop: dn}, duration);
+                //duration скорость перехода в миллисекундах
+
+                return false;
+                // отменяем стандартное действие
+            });
+					}
+				}
+				class ScrollButton extends Anchor {
+					constructor(selector, duration) {
+						super(selector, duration);
+					}
+					activate() {
+						this.conditions();
+						this.positionWatcher();
+						this.btnEvents(this.duration);
+					}
+					positionWatcher() {
+						var self = this;
+						$(window).scroll(function () {
+							self.conditions();
+						});
+					}
+					conditions() {
+						var $btn = this.$btn;
+						if (window.pageYOffset > $(window).height() * 0 && !this.$btn.hasClass('active')) {
+							$btn.addClass('active').animateCss('fadeInUp');
+						} else if (window.pageYOffset <= $(window).height() * 0 && this.$btn.hasClass('active')) {
+							$btn.animateCss('fadeOutDown', function () {
+								$btn.removeClass('active');
+							});
+						}
+					}
+				}
+				var $imgParag = $('.img-parag');
+				$imgParag.find('img.img-fluid').after('<span class="img-wrapper"><span>Посмотреть полностью</span></span>');
+
+
+
+				var anchor = new Anchor('a[href^="#"]', 300);
+				anchor.activate();
+				var scrlBtn = new ScrollButton('.scrollButton', 300);
+				scrlBtn.activate();
+			</script>
+		</body>
+		</html>
